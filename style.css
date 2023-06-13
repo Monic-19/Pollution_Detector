@@ -2,3 +2,92 @@
     padding: 0;
     margin: 0;
 }
+
+.container{
+height: 100vh;
+width: 100vw;
+background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+position: relative;
+}
+
+.hero{
+    height: 50%;
+    width: 30%;
+    /* background-color: aliceblue; */
+    top: 30%;
+    left: 35%;
+    position: absolute;
+    box-shadow: 2px 2px 90px whitesmoke;
+    color: white;
+}
+
+.input input{
+    height: 35px;
+    width: 200px;
+    font-size: large;
+    outline: 0;
+    background: transparent;
+    color: whitesmoke;
+    border: 0;
+    border-radius: 32px;
+    box-shadow: 2px 2px 3px aqua;
+    font-style: italic;
+    padding-left: 22px;
+    position: absolute;
+    left: 15%;
+    top: 6%;
+}
+
+.input img{
+    background-color: aqua;
+    border-radius: 12px;
+    padding: 2px;
+    position: absolute;
+    left: 75%;
+    top: 6%;
+}
+
+::placeholder{
+    color: aqua;
+}
+
+.data{
+    position: absolute;
+    top: 22%;
+    left: 34%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pollution-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
+    margin-left: -28px;
+}
+
+.block{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:baseline;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.l{
+    height: 3px;
+    width: 52px;
+    background-color: aqua;
+}

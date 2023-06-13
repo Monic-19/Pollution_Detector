@@ -10,7 +10,53 @@
 
     <div class="container">
 
+        <div class="hero">
+
+            <div class="input">
+            <input type="text" placeholder="Enter Your City" id="city">
+            <img src="search.svg" alt="" height="32px" width="32px" onclick="getLocation()">
+            </div>
+
+            <div class="data">
+
+                <p id="city">City Name</p>
+                <p id="state">State Name</p>
+                <p id="status">Pollution Staus </p>
+                <div class="pollution-content">
+
+                    <div class="block">
+                    <p id="p1">Co</p>
+                    <div id="l1" class="l"></div>
+                    <p class="d1">x mg/g</p>
+                    </div>
+
+                    <div class="block">
+                    <p id="p2">O3</p>
+                    <div id="l2" class="l"></div>
+                    <p class="d2">x mg/g</p>
+                    </div>
+
+                    <div class="block">
+                    <p id="p3">PM2.5</p>
+                    <div id="l3" class="l"></div>
+                    <p class="d3">x mg/g</p>
+                    </div>
+
+                    <div class="block">
+                    <p id="p4">PM10</p>
+                    <div id="l4" class="l"></div>
+                    <p class="d4">x mg/g</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

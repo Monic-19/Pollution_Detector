@@ -16,9 +16,9 @@ async function getLocation(){
      lat = data[0].lat;
      lon = data[0].lon;
      //console.log(lat + ", " + lon);
+     getPollution();
 }
 
-getLocation();
 
 //Get Pollution
 
@@ -34,5 +34,5 @@ getLocation();
      console.log("PM2.5 : "+pdata.list[0].components.pm2_5);
  }
 
-getPollution();
+
 
