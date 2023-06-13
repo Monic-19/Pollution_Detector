@@ -19,14 +19,15 @@ position: relative;
 }
 
 .hero{
-    height: 50%;
+    /* height: 50%; */
+    height: 0;
     width: 30%;
-    /* background-color: aliceblue; */
     top: 30%;
     left: 35%;
     position: absolute;
     box-shadow: 2px 2px 90px whitesmoke;
     color: white;
+    border-radius: 32px;
 }
 
 .input input{
@@ -44,15 +45,18 @@ position: relative;
     position: absolute;
     left: 15%;
     top: 6%;
+    cursor: pointer;
 }
 
 .input img{
-    background-color: aqua;
+    background-color: rgb(201, 237, 237);
     border-radius: 12px;
     padding: 2px;
     position: absolute;
     left: 75%;
     top: 6%;
+    box-shadow: 2px 2px 3px aqua;
+    cursor: pointer;
 }
 
 ::placeholder{
@@ -90,4 +94,5 @@ position: relative;
     height: 3px;
     width: 52px;
     background-color: aqua;
+    display: none;
 }

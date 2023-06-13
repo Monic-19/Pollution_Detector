@@ -1,9 +1,35 @@
+//Getting details
+let city = document.getElementById('city');
+let cityName = document.getElementById('cityname');
+let state = document.getElementById('state');
+let status = document.getElementById('status');
+
+let p1 = "Carbon Monoxide"; 
+let l1 = document.getElementById('l1');
+let d1 = document.getElementById('d1');
+
+let p2 = "Ozone"; 
+let l2 = document.getElementById('l2');
+let d2 = document.getElementById('d2');
+
+let p3 = "Particulate Matter"; 
+let l3 = document.getElementById('l3');
+let d3 = document.getElementById('d3');
+
+let p4 = "Particulate Matter"; 
+let l4 = document.getElementById('l4');
+let d4 = document.getElementById('d4');
+
+
+
+
 //Get Location
-let city = "ajmer";
 let apiKey = "e072993a2468923ec6b95c350ded12d8"; 
 let LocationUrl =  `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 let lat = 0;
 let lon = 0;
+
+
 
 async function getLocation(){
     let response = await fetch(LocationUrl);
