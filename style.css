@@ -37,7 +37,7 @@ position: relative;
     font-size: large;
     outline: 0;
     background: transparent;
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
     border: 0;
     border-radius: 32px;
     box-shadow: 2px 2px 3px aqua;
@@ -46,6 +46,7 @@ position: relative;
     position: absolute;
     left: 15%;
     top: 6%;
+    background-color: rgb(201, 237, 237);
     cursor: pointer;
 }
 
@@ -61,7 +62,7 @@ position: relative;
 }
 
 ::placeholder{
-    color: aqua;
+    color: black;
 }
 
 .data{
