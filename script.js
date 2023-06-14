@@ -46,17 +46,28 @@ async function getLocation(city){
     
     let response = await fetch(LocationUrl);
     let data = await response.json();
-    // console.log(response);
-    // console.log(data);
-    console.log(data[0].lat);
-    console.log(data[0].lon);
-    console.log(data[0].state);
-     lat = data[0].lat;
-     lon = data[0].lon;
-     let s = data[0].state;
-     //console.log(lat + ", " + lon);
-     getPollution(city,s,lat,lon);
-     console.log("get pollution called");
+    console.log(data.length==0);
+    
+    if(data.length == 0){
+        alert("enter a valid city");
+    }
+
+    else{
+        console.log(response);
+        console.log(data);
+        console.log(data[0].lat);
+        console.log(data[0].lon);
+        console.log(data[0].state);
+         lat = data[0].lat;
+         lon = data[0].lon;
+         let s = data[0].state;
+         //console.log(lat + ", " + lon);
+         getPollution(city,s,lat,lon);
+         console.log("get pollution called");
+    }
+    
+    
+    
 }
 
 
@@ -75,9 +86,9 @@ async function getPollution(city,s,lat,lon){
 
      document.querySelector(".hero").style.height="50%";
      cityName.innerText ="City - "+ city;
-     state.innerText ="State - "+ s.toLowerCase();
+     state.innerText ="State - "+ s;
      let status = document.getElementById('status');
-     status.innerText = "Ruk jao ek bari"; 
+     
      
 
      p1.innerText = "Carbon Monoxide : "+pdata.list[0].components.co;
@@ -102,25 +113,34 @@ async function getPollution(city,s,lat,lon){
      v3 = pdata.list[0].components.pm10;
      v4 = pdata.list[0].components.pm2_5;
 
-     if(0<v1<44){l1.innerText = "Good";l1.style.color = "#59CE8F";console.log("i am out1")}
-     else if(44<v1<94){l1.innerText = "F";l1.style.color = "#59CE8F";console.log("i am out2")}
-     else if(94<v1<124){l1.innerText = "M";l1.style.color = "#E8F9FD";console.log("i am out3")}
-     else {l1.innerText = "P";l1.style.color = "#990000";}
 
-     if(0<v2<60){l2.innerText = "Good";l2.style.color = "#59CE8F";console.log("i am out1")}
-     else if(60<v2<100){l2.innerText = "F";l2.style.color = "#59CE8F";console.log("i am out2")}
-     else if(100<v2<140){l2.innerText = "M";l2.style.color = "#E8F9FD";console.log("i am out3")}
-     else {l2.innerText = "P";l2.style.color = "#990000";}
 
-     if(-1<v3<.2){l3.innerText = "G";l3.style.color = "#59CE8F";console.log("i am out1")}
-     else if(.2<v3<.5){l3.innerText = "F";l3.style.color = "#59CE8F";console.log("i am out2")}
-     else if(.5<v3<.7){l3.innerText = "M";l3.style.color = "#E8F9FD";console.log("i am out3")}
-     else {l3.innerText = "Poor";l3.style.color = "#990000";}
+     if(0<v1 && v1<440){l1.innerText = "Good";l1.style.color = "#59CE8F";console.log("i am out1"); v1=1}
+     else if(440<v1 && v1<940){l1.innerText = "Fine";l1.style.color = "#fffb05";console.log("i am out2"); v1=2}
+     else if(940<v1 && v1<1240){l1.innerText = "Mild";l1.style.color = "#ffa505";console.log("i am out3"); v1=3}
+     else {l1.innerText = "Poor";l1.style.color = "#990000";v1=4}
 
-     if(-1<v4<.1){l4.innerText = "G";l4.style.color = "#59CE8F";console.log("i am out1")}
-     else if(.1<v4<.25){l4.innerText = "F";l4.style.color = "#59CE8F";console.log("i am out2")}
-     else if(.24<v4<.5){l4.innerText = "M";l4.style.color = "#E8F9FD";console.log("i am out3")}
-     else {l4.innerText = "Poor";l4.style.color = "#990000";}
+     if(0<v2 && v2<60){l2.innerText = "Good";l2.style.color = "#59CE8F";console.log("i am out1");v2=1}
+     else if(60<v2 && v2<100){l2.innerText = "Fine";l2.style.color = "#fffb05";console.log("i am out2");v2=2}
+     else if(100<v2 && v2<140){l2.innerText = "Mild";l2.style.color = "#ffa505";console.log("i am out3");v2=3}
+     else {l2.innerText = "Poor";l2.style.color = "#990000";v2=4}
+
+     if(0<v3 && v3<20){l3.innerText = "Good";l3.style.color = "#59CE8F";console.log("i am out1");v3=1 }
+     else if(20<v3 && v3<50){l3.innerText = "Fine";l3.style.color = "#fffb05";console.log("i am out2");v3=2 }
+     else if(50<v3 && v3<70){l3.innerText = "Mild";l3.style.color = "#ffa505";console.log("i am out3");v3=3 }
+     else {l3.innerText = "Poor";l3.style.color = "#990000";v3=4} 
+
+     if(0<v4 && v4<10){l4.innerText = "Good";l4.style.color = "#59CE8F";console.log("i am out1") ;v4=1}
+     else if(10<v4 && v4<25){l4.innerText = "Fine";l4.style.color = "#fffb05";console.log("i am out2") ;v4=2}
+     else if(24<v4 && v4<50){l4.innerText = "Mild";l4.style.color = "#ffa505";console.log("i am out3") ;v4=3}
+     else {l4.innerText = "Poor";l4.style.color = "#990000"; v4=4}
+
+     let V =(v1+v2+v3+v4);
+     console.log(V);
+     if(V>0 &&V<5){status.innerText = "Status : Good "; status.style.color = "#59CE8F"}
+     else if(V>5 &&V<10){status.innerText = "Status : Fine"; status.style.color = "#fffb05"}
+     else if(V>10 &&V<15){status.innerText = "Status : Mild "; status.style.color = "#ffa505"}
+     else {status.innerText = "Status : Poor "; status.style.color = "#990000"}
     
  }
 
